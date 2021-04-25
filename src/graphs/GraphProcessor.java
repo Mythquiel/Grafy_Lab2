@@ -148,11 +148,13 @@ public class GraphProcessor {
             row++;
         }
         int incr = 0;
-        for (int inc = row; inc < row + cycles.size(); inc++) {
-            cycleGraph[inc][0] = cycles.get(incr) + 1;
+        int vertex = 1;
+        for (int inc = row; inc < vertexNo+row; inc++) {
+            cycleGraph[inc][0] = vertex;
             cycleGraph[inc][1] = additionalVertex;
-            //System.out.println((cycles.get(incr) + 1) + "-" + additionalVertex);
+            //System.out.println((cycles.get(incr)) + "-" + additionalVertex);
             incr++;
+            vertex++;
         }
         return cycleGraph;
     }
@@ -303,7 +305,7 @@ public class GraphProcessor {
         if (i == vertexNo)
             return true;
 
-        DFSUtil(i, visited, graphArray);
+        isVisited(i, visited, graphArray);
 
         for (i = 0; i < vertexNo; i++)
             if (visited[i] == false && graphArray[i].size() > 0)
@@ -312,7 +314,7 @@ public class GraphProcessor {
         return true;
     }
 
-    private void DFSUtil(int vertexNo, boolean[] visited, ArrayList<Integer>[] graphArray) {
+    private void isVisited(int vertexNo, boolean[] visited, ArrayList<Integer>[] graphArray) {
         {
             visited[vertexNo] = true;
 
@@ -320,7 +322,7 @@ public class GraphProcessor {
             while (i.hasNext()) {
                 int n = i.next();
                 if (!visited[n])
-                    DFSUtil(n, visited, graphArray);
+                    isVisited(n, visited, graphArray);
             }
         }
     }
