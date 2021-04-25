@@ -1,7 +1,0 @@
-Graph COLOR {
-    w1k0 -- w2k1;
-    w2k1 -- w3k2;
-    w3k2 -- w4k3;
-    w1k0 -- w4k3;
-    w2k1 -- w4k3;
-}

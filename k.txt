@@ -1,7 +1,12 @@
 Graph K {
     w1k0 -- w2k1;
     w2k1 -- w3k2;
-    w3k2 -- w4k3;
-    w1k0 -- w4k3;
-    w2k1 -- w4k3;
+    w3k2 -- w4k1;
+    w4k1 -- w5k2;
+    w1k0 -- w5k2;
+    w1k0 -- w6k3;
+    w2k1 -- w6k3;
+    w3k2 -- w6k3;
+    w4k1 -- w6k3;
+    w5k2 -- w6k3;
 }
